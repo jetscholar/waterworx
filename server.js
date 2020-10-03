@@ -8,6 +8,7 @@ const expressLayouts = require('express-ejs-layouts')
 
 //Pull in index.js from routes folder
 const indexRouter = require('./routes/index')
+const authorRouter = require('./routes/authors')
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
@@ -25,5 +26,8 @@ db.on('error', error => console.error(error))
 db.once('open', () => console.log("Connected to DB"))
 
 app.use('/', indexRouter)
+//route to authors folder
+app.use('/authors', authorRouter)
+
 
 app.listen(process.env.PORT || 5003)
