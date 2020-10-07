@@ -1,9 +1,7 @@
-# Waterworx
+# Mybrary
 
-## Waterworx is an irrigation control system
+## Mybrary - Fullstack web dev with Kyle
 
 <https://gstwaterworx.herokuapp.com/>
 
-### It consists of
 
-* ESP8266 Node MCU
