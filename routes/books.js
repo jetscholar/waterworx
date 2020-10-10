@@ -58,11 +58,11 @@ router.get('/:id', async (req, res) => {
     try {
         // use populate to get all info from the author collection related to id
         const book = await Book.findById(req.params.id)
-                                        .populate('author')
-                                        .exec()
+                                .populate('author')
+                                .exec()
         res.render('books/show', { book: book})
     } catch {
-        
+        res.redirect('/')
     }
 })
 
@@ -120,11 +120,11 @@ router.delete('/:id', async (req, res) => {
 }) 
 
 async function renderNewPage(res, book, hasError = false) {
-    renderFormPage(res, book, 'new', hasError = false)
+    renderFormPage(res, book, 'new', hasError)
 }
 
 async function renderEditPage(res, book, hasError = false) {
-    renderFormPage(res, book, 'edit', hasError = false)
+    renderFormPage(res, book, 'edit', hasError)
 }
 
 async function renderFormPage(res, book, form, hasError = false) {
